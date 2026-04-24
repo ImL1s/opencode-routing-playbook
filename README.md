@@ -27,6 +27,27 @@ No real API keys or tokens belong in this repo.
 | Cursor local router only | `cursor-local-router-only` | OpenCode front-end over Cursor local/ACP model router. |
 | Cursor local router + OpenCode Go | `cursor-go-provider-diverse` | Cursor primary with Go side lanes. |
 
+## Profile capabilities at a glance
+
+This is the short human read before opening a profile directory. For rough Opus 4.7-relative percentages, see [`docs/opus47-relative-estimates.md`](docs/opus47-relative-estimates.md).
+
+| Profile | Capability posture | Strongest lanes | Avoid / caveat |
+| --- | --- | --- | --- |
+| `daily-gpt55-go-provider-diverse` | Best default when GPT subscription + OpenCode Go are both available. | Core coding, planning, review, Go cheap/context/multimodal side lanes, provider fallback. | Cross-provider; not ideal for sensitive repos unless accepted. |
+| `gpt55-oauth-openai-only` | High-quality same-provider GPT subscription profile. | Daily coding/review where GPT-5.5 OAuth is locally executable. | No Go fallback; do not assume GPT-5.5 API-key availability. |
+| `provider-diverse-safe-gpt54-go` | Portable OpenAI API + Go mixed profile. | GPT-5.4 for reliable work; Go for context, cheap sweeps, multimodal, outage fallback. | API spend can grow if GPT is used for every lane. |
+| `go-first-openai-api-review` | Cost-first mixed profile with OpenAI as escalation. | Bulk Go work, long-context exploration, OpenAI final review/escape hatch. | Not ideal when every task needs premium final quality. |
+| `openai-only-sensitive` | Same-provider OpenAI profile for approved-provider boundaries. | Sensitive/proprietary repos where OpenAI is allowed and cross-provider is not. | Lower CP/fallback than provider-diverse profiles. |
+| `openai-api-budget-mini` | OpenAI mini-first budget profile. | Low-risk edits, summaries, small helper lanes, cost control. | Do not use mini-first output as final authority for complex code. |
+| `opencode-go-only-balanced` | General-purpose OpenCode Go-only setup. | Broad non-sensitive work using GLM/Kimi/MiMo/MiniMax/Qwen by role. | Quality below premium GPT/Opus for hard final review. |
+| `opencode-go-only-low-cost` | Cheapest high-volume Go profile. | Sweeps, classification, summarization, exploration, batch docs. | Not for hard debugging, architecture, or final code review. |
+| `opencode-go-only-large-context` | Large-context-first Go profile. | Big repos, large logs, long documents, context-heavy audits. | Wasteful if context size is not the bottleneck. |
+| `opencode-go-only-multimodal` | Multimodal-first Go profile. | Image/audio/video/PDF and media-heavy understanding. | Use balanced Go or GPT profiles for ordinary text/code work. |
+| `google-gemini-only` | Gemini-only same-provider profile. | Gemini-first reasoning/search where Google auth is available. | Template: verify local model IDs and quotas before relying on it. |
+| `google-gemini-go-provider-diverse` | Gemini reasoning + Go specialist lanes. | Gemini for core reasoning; Go for context, cheap sweeps, multimodal side work. | Cross-provider prompts need privacy acceptance. |
+| `cursor-local-router-only` | OpenCode UI over Cursor local router/ACP. | Users who already rely on Cursor subscription/router and want OpenCode-style routing. | Depends on local Cursor endpoint and current router model list. |
+| `cursor-go-provider-diverse` | Cursor primary with Go side lanes. | Cursor core coding plus Go cheap/context/multimodal lanes. | Cross-provider; needs both local Cursor router and Go access. |
+
 ## Profiles shipped
 
 `verified` means smoke/list checked in the originating local setup. `template` means installable JSON that still needs `opencode models <provider>` and a smoke test on the target machine.
