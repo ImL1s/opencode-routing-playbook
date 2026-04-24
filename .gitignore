@@ -10,3 +10,6 @@
 
 # Generated validation output
 .validation/
+
+.omx/
+.omc/

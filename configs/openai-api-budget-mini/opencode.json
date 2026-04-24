@@ -5,7 +5,7 @@
     "AGENTS.md",
     "GEMINI.md"
   ],
-  "model": "openai/gpt-5.5",
+  "model": "openai/gpt-5.4-mini",
   "small_model": "openai/gpt-5.4-mini",
   "permission": {
     "*": "allow",

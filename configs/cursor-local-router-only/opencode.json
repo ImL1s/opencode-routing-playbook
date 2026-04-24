@@ -1,0 +1,59 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "GEMINI.md"
+  ],
+  "model": "cursor-acp/auto",
+  "small_model": "cursor-acp/gpt-5.3-codex-low-fast",
+  "permission": {
+    "*": "allow",
+    "bash": "allow",
+    "edit": "allow"
+  },
+  "plugin": [
+    "oh-my-openagent@latest"
+  ],
+  "provider": {
+    "cursor": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "${PROVIDER_API_KEY}",
+        "baseURL": "http://127.0.0.1:8765/v1"
+      },
+      "models": {
+        "auto": {
+          "name": "auto"
+        }
+      }
+    },
+    "cursor-acp": {
+      "name": "Cursor Agent (ACP stdin)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:32124/v1"
+      },
+      "models": {
+        "auto": {
+          "name": "auto"
+        },
+        "gpt-5.3-codex-high": {
+          "name": "gpt-5.3-codex-high"
+        },
+        "gpt-5.3-codex-low-fast": {
+          "name": "gpt-5.3-codex-low-fast"
+        },
+        "gpt-5.3-codex-xhigh": {
+          "name": "gpt-5.3-codex-xhigh"
+        },
+        "opus-4.6-thinking": {
+          "name": "opus-4.6-thinking"
+        },
+        "sonnet-4.5-thinking": {
+          "name": "sonnet-4.5-thinking"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "hephaestus": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "oracle": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "librarian": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-2.5-pro",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "explore": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-2.5-flash-image",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "prometheus": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "metis": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "momus": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "atlas": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3.1-flash-lite-preview",
+        "google/gemini-3-pro-preview"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3.1-flash-lite-preview",
+        "google/gemini-2.5-pro"
+      ]
+    },
+    "document-writer": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3.1-pro-preview",
+        "google/gemini-3-flash-preview"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3.1-flash-lite-preview",
+        "google/gemini-2.5-pro"
+      ]
+    },
+    "go-long-horizon": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "go-agentic-search": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "go-multimodal": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3.1-flash-lite-preview",
+        "google/gemini-3-pro-preview"
+      ]
+    },
+    "go-large-context": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "go-cheap-sweep": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "ultrabrain": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "deep": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "artistry": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3.1-flash-lite-preview",
+        "google/gemini-3-pro-preview"
+      ]
+    },
+    "quick": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "unspecified-low": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "unspecified-high": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "writing": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3.1-pro-preview",
+        "google/gemini-3-flash-preview"
+      ]
+    },
+    "cursor-opus": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "openai-codex": {
+      "model": "google/gemini-3.1-pro-preview",
+      "fallback_models": [
+        "google/gemini-3-pro-preview",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
+    },
+    "ui-prototype": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "fallback_models": [
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.1-pro-preview"
+      ]
+    }
+  }
+}

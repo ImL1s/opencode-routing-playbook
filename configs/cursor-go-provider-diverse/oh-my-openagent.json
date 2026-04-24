@@ -1,0 +1,252 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "hephaestus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "oracle": {
+      "model": "cursor-acp/opus-4.6-thinking",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "librarian": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/mimo-v2.5-pro"
+      ]
+    },
+    "explore": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/sonnet-4.5-thinking",
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/mimo-v2-omni"
+      ]
+    },
+    "prometheus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "metis": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "momus": {
+      "model": "cursor-acp/gpt-5.3-codex-xhigh",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/opus-4.6-thinking",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "atlas": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/qwen3.6-plus"
+      ]
+    },
+    "document-writer": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/kimi-k2.5"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/qwen3.6-plus"
+      ]
+    },
+    "go-long-horizon": {
+      "model": "opencode-go/glm-5.1",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "go-agentic-search": {
+      "model": "opencode-go/kimi-k2.6",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "go-multimodal": {
+      "model": "opencode-go/mimo-v2-omni",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "opencode-go/mimo-v2.5"
+      ]
+    },
+    "go-large-context": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/mimo-v2-pro"
+      ]
+    },
+    "go-cheap-sweep": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "ultrabrain": {
+      "model": "cursor-acp/gpt-5.3-codex-xhigh",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/opus-4.6-thinking",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "deep": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "artistry": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "quick": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "unspecified-low": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "unspecified-high": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "writing": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor-acp/gpt-5.3-codex-high",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "cursor-opus": {
+      "model": "cursor-acp/opus-4.6-thinking",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "openai-codex": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "ui-prototype": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto",
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    }
+  }
+}

@@ -1,61 +1,98 @@
 # OpenCode Routing Playbook
 
-Reusable, sanitized OpenCode + oh-my-openagent routing profiles for mixed model subscriptions.
+Reusable, sanitized OpenCode + oh-my-openagent routing profiles for different subscription and API-key combinations.
 
-Current first profile is based on this local setup:
-
-- GPT subscription / OpenAI OAuth available locally.
-- OpenCode Go subscription available (intro pricing discussed in-session: first month $5, then $10/month; verify current pricing before sharing externally).
-- Daily goal: GPT handles high-reliability work; OpenCode Go handles specialist lanes where it is cheaper, faster, larger-context, multimodal, or better suited.
+This repo is intentionally **profile-first**: do not treat one config as universal. Pick a profile based on what the user actually has: GPT/OpenAI OAuth, OpenAI API key, OpenCode Go, Gemini/Google, Cursor local router, or a provider-diverse mix.
 
 No real API keys or tokens belong in this repo.
 
-## Profiles
+## Quick choose
 
-| Profile | Use when | Main model | Small model | Provider fallback |
+| If you have... | Start with... | Why |
+| --- | --- | --- |
+| GPT/OpenAI OAuth + OpenCode Go | `daily-gpt55-go-provider-diverse` | Quality-first daily setup: GPT primary, Go for specialist/CP/fallback lanes. |
+| GPT/OpenAI OAuth only | `gpt55-oauth-openai-only` | Same-provider OpenAI profile with GPT-5.5 where locally executable. |
+| OpenAI API key + OpenCode Go | `provider-diverse-safe-gpt54-go` | Portable API-safe profile; does not assume GPT-5.5 API-key availability. |
+| OpenCode Go + small OpenAI API budget | `go-first-openai-api-review` | Spend Go first, keep OpenAI for escalation/final review. |
+| OpenAI API only, sensitive work | `openai-only-sensitive` | Same-provider fallbacks only; no Go/Google/Cursor routing. |
+| OpenAI API only, cost-sensitive | `openai-api-budget-mini` | GPT-5.4-mini first, GPT-5.4 only for hard lanes. |
+| OpenCode Go only | `opencode-go-only-balanced` | Uses GLM/Kimi/MiMo/MiniMax/Qwen by role. |
+| OpenCode Go only, cheapest sweeps | `opencode-go-only-low-cost` | MiniMax/Qwen-heavy bulk lane. |
+| OpenCode Go only, huge context | `opencode-go-only-large-context` | MiMo large-context-first lane. |
+| OpenCode Go only, multimodal | `opencode-go-only-multimodal` | MiMo-Omni-first image/audio/video/PDF lane. |
+| Gemini/Google only | `google-gemini-only` | Gemini-only same-provider profile. |
+| Gemini/Google + OpenCode Go | `google-gemini-go-provider-diverse` | Gemini primary with Go context/cheap/multimodal lanes. |
+| Cursor local router only | `cursor-local-router-only` | OpenCode front-end over Cursor local/ACP model router. |
+| Cursor local router + OpenCode Go | `cursor-go-provider-diverse` | Cursor primary with Go side lanes. |
+
+## Profiles shipped
+
+`verified` means smoke/list checked in the originating local setup. `template` means installable JSON that still needs `opencode models <provider>` and a smoke test on the target machine.
+
+| Profile | Status | Providers | Main model | Best fit |
 | --- | --- | --- | --- | --- |
-| `daily-gpt55-go-provider-diverse` | This machine's daily workflow; GPT-5.5 is locally executable via OpenAI OAuth | `openai/gpt-5.5` | `openai/gpt-5.4-mini` | Yes, OpenCode Go allowed |
-| `provider-diverse-safe-gpt54-go` | Portable/no-GPT-5.5 profile; still allows OpenCode Go outage fallback | `openai/gpt-5.4` | `openai/gpt-5.4-mini` | Yes, OpenCode Go allowed |
-| `openai-only-sensitive` | Sensitive/proprietary/compliance-bound work where cross-provider fallback is not acceptable | `openai/gpt-5.4` | `openai/gpt-5.4-mini` | No, OpenAI only |
+| `daily-gpt55-go-provider-diverse` | verified | openai, opencode-go | `openai/gpt-5.5` | daily local workflow when GPT-5.5 is actually executable and OpenCode Go is available |
+| `gpt55-oauth-openai-only` | template | openai | `openai/gpt-5.5` | ChatGPT/Codex-style OAuth users who can run GPT-5.5 but do not want cross-provider routing |
+| `provider-diverse-safe-gpt54-go` | verified | openai, opencode-go | `openai/gpt-5.4` | users with OpenAI API plus OpenCode Go, without assuming GPT-5.5 API availability |
+| `go-first-openai-api-review` | template | opencode-go, openai | `opencode-go/glm-5.1` | users with small OpenAI API budget and cheap Go capacity |
+| `openai-only-sensitive` | verified | openai | `openai/gpt-5.4` | sensitive work where OpenCode Go or other provider fallback is not acceptable |
+| `openai-api-budget-mini` | template | openai | `openai/gpt-5.4-mini` | OpenAI API users optimizing cost for low-risk repos/tasks |
+| `opencode-go-only-balanced` | template | opencode-go | `opencode-go/glm-5.1` | users who only have OpenCode Go and want a general-purpose setup |
+| `opencode-go-only-low-cost` | template | opencode-go | `opencode-go/minimax-m2.7` | bulk summarization, classification, exploration, low-risk docs |
+| `opencode-go-only-large-context` | template | opencode-go | `opencode-go/mimo-v2.5-pro` | large repo sweeps, big logs, long documents, context-heavy audits |
+| `opencode-go-only-multimodal` | template | opencode-go | `opencode-go/mimo-v2-omni` | vision-heavy, media-heavy, and document-understanding workflows |
+| `google-gemini-only` | template | google | `google/gemini-3.1-pro-preview` | users with Gemini/Antigravity access but no OpenAI/OpenCode Go |
+| `google-gemini-go-provider-diverse` | template | google, opencode-go | `google/gemini-3.1-pro-preview` | Gemini-first users who also have Go for CP/context lanes |
+| `cursor-local-router-only` | template | cursor-acp, cursor | `cursor-acp/auto` | users who want OpenCode UI/routing over an existing Cursor subscription |
+| `cursor-go-provider-diverse` | template | cursor-acp, cursor, opencode-go | `cursor-acp/auto` | Cursor users who also have OpenCode Go and want cheaper/faster side lanes |
 
-## Quick install
+## Project layout
 
-Preview a profile first:
+```text
+configs/<profile>/
+  opencode.json             # installable sanitized OpenCode config
+  oh-my-openagent.json      # role/category model routing and fallback chains
+  README.md                 # profile-specific fit/install/smoke notes
+docs/
+  profile-selection.md      # decision tree by subscription/API situation
+  subscription-matrix.md    # full combination matrix
+  profile-architecture.md   # naming, profile tiers, and contribution rules
+  model-rationale.md        # why each model family appears
+  security.md               # secret and provider-boundary guidance
+profiles.json               # machine-readable catalog
+scripts/install_profile.sh  # validates, then installs with backups and chmod 600
+scripts/validate_configs.py # JSON/index/fallback/provider-boundary/secret checks
+.github/workflows/validate.yml # CI guard for public profile changes
+```
+
+## Install
+
+Preview/validate first:
 
 ```bash
-python3 scripts/validate_configs.py configs/daily-gpt55-go-provider-diverse
+python3 scripts/validate_configs.py configs/opencode-go-only-balanced
+scripts/install_profile.sh --dry-run configs/opencode-go-only-balanced
 ```
 
 Install with backup:
 
 ```bash
-scripts/install_profile.sh configs/daily-gpt55-go-provider-diverse
+scripts/install_profile.sh configs/opencode-go-only-balanced
 ```
 
 Then verify locally:
 
 ```bash
 opencode debug config
-opencode run -m openai/gpt-5.4-mini --variant low --title routing-smoke --dangerously-skip-permissions 'Reply with exactly: OK'
+opencode run -m opencode-go/minimax-m2.7 --title routing-smoke --dangerously-skip-permissions 'Reply with exactly: OK'
 ```
 
-## Routing principle
+## Important assumptions
 
-| Job type | Preferred lane |
-| --- | --- |
-| Core coding / architecture / hard debugging / final review | GPT high/xhigh |
-| Formal UI/UX / visual quality judgement | GPT medium |
-| Quick low-risk work | GPT mini or cheap Go sweep |
-| Long-horizon autonomous work | GLM-5.1 |
-| Agentic search / deep exploration | Kimi K2.6 |
-| 1M large-context sweeps | MiMo-V2.5-Pro |
-| True multimodal image/audio/video/PDF work | MiMo-V2-Omni |
-| Cheap batch sweeps | MiniMax M2.7 / Qwen3.5 Plus |
-| Fast UI prototype / option generation | Qwen3.6 Plus |
-
-## Safety notes
-
-- `fallback_models` depends on oh-my-openagent, not plain OpenCode alone.
-- Cross-provider fallback can send prompt/code to a different provider. Use `openai-only-sensitive` for sensitive repos.
-- Keep real secrets in environment variables or a secrets manager; do not paste raw configs with tokens into issues/PRs/AI prompts.
-- Pin `@latest` dependencies before using this in production/CI.
+- `fallback_models` is an **oh-my-openagent** routing feature; plain OpenCode may not honor these chains by itself.
+- `openai` and `opencode-go` are treated as OpenCode/auth/plugin-managed providers. That is why the public templates do not declare custom `provider.openai` or `provider.opencode-go` blocks.
+- Custom provider blocks are kept minimal and profile-specific. A same-provider profile should not register unrelated provider endpoints.
+- Optional MCP servers are intentionally not bundled into every profile. Add local MCPs after selecting the model-routing profile.
+- Cross-provider profiles can send prompt/code to multiple providers. Use `openai-only-sensitive`, `google-gemini-only`, or `cursor-local-router-only` when a single approved provider boundary matters.
+- GPT-5.5 is kept in OAuth/subscription-oriented profiles because it was locally executable in the originating setup. Do not assume GPT-5.5 API-key availability in portable API profiles.
+- Model lists, availability, pricing, and context windows drift. Re-run `opencode models <provider>` and smoke tests before presenting a profile as current for another machine.

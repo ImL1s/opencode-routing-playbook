@@ -2,24 +2,324 @@
   "profiles": [
     {
       "name": "daily-gpt55-go-provider-diverse",
+      "profile_dir": "configs/daily-gpt55-go-provider-diverse",
       "main_model": "openai/gpt-5.5",
       "small_model": "openai/gpt-5.4-mini",
+      "access": [
+        "OpenAI OAuth / GPT subscription",
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "openai",
+        "opencode-go"
+      ],
+      "routing_posture": "quality-first daily, provider-diverse fallback",
+      "privacy_posture": "cross-provider; avoid for sensitive repos unless accepted",
+      "cost_posture": "uses GPT for high-reliability work and Go for specialist/CP lanes",
+      "recommended_for": "daily local workflow when GPT-5.5 is actually executable and OpenCode Go is available",
+      "verified_locally": true,
+      "notes": [
+        "Current machine profile from the originating session."
+      ],
       "cross_provider_fallback": true,
-      "recommended_for": "daily local workflow with OpenAI OAuth and OpenCode Go"
+      "verification_status": "verified-local"
+    },
+    {
+      "name": "gpt55-oauth-openai-only",
+      "profile_dir": "configs/gpt55-oauth-openai-only",
+      "main_model": "openai/gpt-5.5",
+      "small_model": "openai/gpt-5.4-mini",
+      "access": [
+        "OpenAI OAuth / GPT subscription"
+      ],
+      "providers": [
+        "openai"
+      ],
+      "routing_posture": "quality-first, same-provider only",
+      "privacy_posture": "same provider, but still cloud-hosted",
+      "cost_posture": "subscription/OAuth oriented; no OpenCode Go fallback",
+      "recommended_for": "ChatGPT/Codex-style OAuth users who can run GPT-5.5 but do not want cross-provider routing",
+      "verified_locally": false,
+      "notes": [
+        "Use only where openai/gpt-5.5 is locally executable; API-key availability is not assumed."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
     },
     {
       "name": "provider-diverse-safe-gpt54-go",
+      "profile_dir": "configs/provider-diverse-safe-gpt54-go",
       "main_model": "openai/gpt-5.4",
       "small_model": "openai/gpt-5.4-mini",
+      "access": [
+        "OpenAI API key",
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "openai",
+        "opencode-go"
+      ],
+      "routing_posture": "portable OpenAI API primary, Go fallback/specialists",
+      "privacy_posture": "cross-provider; avoid for sensitive repos unless accepted",
+      "cost_posture": "balanced",
+      "recommended_for": "users with OpenAI API plus OpenCode Go, without assuming GPT-5.5 API availability",
+      "verified_locally": true,
+      "notes": [
+        "Portable counterpart to the GPT-5.5 daily profile."
+      ],
       "cross_provider_fallback": true,
-      "recommended_for": "portable no-GPT-5.5 workflow with OpenCode Go outage fallback"
+      "verification_status": "verified-local"
+    },
+    {
+      "name": "go-first-openai-api-review",
+      "profile_dir": "configs/go-first-openai-api-review",
+      "main_model": "opencode-go/glm-5.1",
+      "small_model": "opencode-go/minimax-m2.7",
+      "access": [
+        "OpenCode Go subscription",
+        "OpenAI API key"
+      ],
+      "providers": [
+        "opencode-go",
+        "openai"
+      ],
+      "routing_posture": "OpenCode Go first, OpenAI only as escalation/review fallback",
+      "privacy_posture": "cross-provider; prompts may reach either provider",
+      "cost_posture": "minimize OpenAI API spend while keeping quality escape hatches",
+      "recommended_for": "users with small OpenAI API budget and cheap Go capacity",
+      "verified_locally": false,
+      "notes": [
+        "Good when GPT/API quota is precious but final escalation matters."
+      ],
+      "cross_provider_fallback": true,
+      "verification_status": "template-needs-smoke-test"
     },
     {
       "name": "openai-only-sensitive",
+      "profile_dir": "configs/openai-only-sensitive",
       "main_model": "openai/gpt-5.4",
       "small_model": "openai/gpt-5.4-mini",
+      "access": [
+        "OpenAI API key"
+      ],
+      "providers": [
+        "openai"
+      ],
+      "routing_posture": "same-provider, high-quality portable",
+      "privacy_posture": "best shipped profile for sensitive/proprietary repos when OpenAI is approved",
+      "cost_posture": "moderate/high depending on workload",
+      "recommended_for": "sensitive work where OpenCode Go or other provider fallback is not acceptable",
+      "verified_locally": true,
+      "notes": [
+        "Same-provider fallback only."
+      ],
       "cross_provider_fallback": false,
-      "recommended_for": "sensitive repositories and compliance-bound work"
+      "verification_status": "verified-local"
+    },
+    {
+      "name": "openai-api-budget-mini",
+      "profile_dir": "configs/openai-api-budget-mini",
+      "main_model": "openai/gpt-5.4-mini",
+      "small_model": "openai/gpt-5.4-mini",
+      "access": [
+        "OpenAI API key"
+      ],
+      "providers": [
+        "openai"
+      ],
+      "routing_posture": "OpenAI mini-first with GPT-5.4 escalation routes",
+      "privacy_posture": "same provider, but lower-capability default",
+      "cost_posture": "lower OpenAI spend",
+      "recommended_for": "OpenAI API users optimizing cost for low-risk repos/tasks",
+      "verified_locally": false,
+      "notes": [
+        "Keep hard-review categories on GPT-5.4; do not use as final authority for high-risk changes."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "opencode-go-only-balanced",
+      "profile_dir": "configs/opencode-go-only-balanced",
+      "main_model": "opencode-go/glm-5.1",
+      "small_model": "opencode-go/minimax-m2.7",
+      "access": [
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "opencode-go"
+      ],
+      "routing_posture": "Go specialist split without OpenAI",
+      "privacy_posture": "single non-OpenAI provider family",
+      "cost_posture": "subscription/Go-budget balanced",
+      "recommended_for": "users who only have OpenCode Go and want a general-purpose setup",
+      "verified_locally": false,
+      "notes": [
+        "Uses GLM/Kimi/MiMo/MiniMax/Qwen by role."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "opencode-go-only-low-cost",
+      "profile_dir": "configs/opencode-go-only-low-cost",
+      "main_model": "opencode-go/minimax-m2.7",
+      "small_model": "opencode-go/qwen3.5-plus",
+      "access": [
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "opencode-go"
+      ],
+      "routing_posture": "cheap sweep first, stronger Go models only as fallback",
+      "privacy_posture": "single non-OpenAI provider family",
+      "cost_posture": "lowest Go spend / highest request budget",
+      "recommended_for": "bulk summarization, classification, exploration, low-risk docs",
+      "verified_locally": false,
+      "notes": [
+        "Not recommended as final reviewer for complex code."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "opencode-go-only-large-context",
+      "profile_dir": "configs/opencode-go-only-large-context",
+      "main_model": "opencode-go/mimo-v2.5-pro",
+      "small_model": "opencode-go/qwen3.6-plus",
+      "access": [
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "opencode-go"
+      ],
+      "routing_posture": "1M/context-window-first",
+      "privacy_posture": "single non-OpenAI provider family",
+      "cost_posture": "spend Go quota where huge context matters",
+      "recommended_for": "large repo sweeps, big logs, long documents, context-heavy audits",
+      "verified_locally": false,
+      "notes": [
+        "Prefer only when context size is the binding constraint."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "opencode-go-only-multimodal",
+      "profile_dir": "configs/opencode-go-only-multimodal",
+      "main_model": "opencode-go/mimo-v2-omni",
+      "small_model": "opencode-go/minimax-m2.7",
+      "access": [
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "opencode-go"
+      ],
+      "routing_posture": "multimodal-first",
+      "privacy_posture": "single non-OpenAI provider family",
+      "cost_posture": "spend Go quota where image/audio/video/PDF context matters",
+      "recommended_for": "vision-heavy, media-heavy, and document-understanding workflows",
+      "verified_locally": false,
+      "notes": [
+        "Use balanced Go profile for ordinary text/code work."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "google-gemini-only",
+      "profile_dir": "configs/google-gemini-only",
+      "main_model": "google/gemini-3.1-pro-preview",
+      "small_model": "google/gemini-3.1-flash-lite-preview",
+      "access": [
+        "Google AI/Gemini API or Antigravity auth"
+      ],
+      "providers": [
+        "google"
+      ],
+      "routing_posture": "Gemini-only, same-provider",
+      "privacy_posture": "single Google provider boundary",
+      "cost_posture": "depends on Google/Gemini plan",
+      "recommended_for": "users with Gemini/Antigravity access but no OpenAI/OpenCode Go",
+      "verified_locally": false,
+      "notes": [
+        "Model IDs were locally listed; smoke-test in your environment."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "google-gemini-go-provider-diverse",
+      "profile_dir": "configs/google-gemini-go-provider-diverse",
+      "main_model": "google/gemini-3.1-pro-preview",
+      "small_model": "google/gemini-3.1-flash-lite-preview",
+      "access": [
+        "Google AI/Gemini API or Antigravity auth",
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "google",
+        "opencode-go"
+      ],
+      "routing_posture": "Gemini primary, Go specialist/fallback lanes",
+      "privacy_posture": "cross-provider Google/OpenCode Go",
+      "cost_posture": "use Gemini for reasoning and Go for context/multimodal/cheap sweeps",
+      "recommended_for": "Gemini-first users who also have Go for CP/context lanes",
+      "verified_locally": false,
+      "notes": [
+        "Good alternative when OpenAI is unavailable or quota constrained."
+      ],
+      "cross_provider_fallback": true,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "cursor-local-router-only",
+      "profile_dir": "configs/cursor-local-router-only",
+      "main_model": "cursor-acp/auto",
+      "small_model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "access": [
+        "Cursor subscription with local router/ACP adapter"
+      ],
+      "providers": [
+        "cursor-acp",
+        "cursor"
+      ],
+      "routing_posture": "Cursor local-router only",
+      "privacy_posture": "Cursor boundary only; cursor and cursor-acp are local-router transports, not separate provider fallbacks",
+      "cost_posture": "subscription/router dependent",
+      "recommended_for": "users who want OpenCode UI/routing over an existing Cursor subscription",
+      "verified_locally": false,
+      "notes": [
+        "Requires the local Cursor-compatible endpoint to be running."
+      ],
+      "cross_provider_fallback": false,
+      "verification_status": "template-needs-smoke-test"
+    },
+    {
+      "name": "cursor-go-provider-diverse",
+      "profile_dir": "configs/cursor-go-provider-diverse",
+      "main_model": "cursor-acp/auto",
+      "small_model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "access": [
+        "Cursor subscription with local router/ACP adapter",
+        "OpenCode Go subscription"
+      ],
+      "providers": [
+        "cursor-acp",
+        "cursor",
+        "opencode-go"
+      ],
+      "routing_posture": "Cursor primary, Go specialist/fallback lanes",
+      "privacy_posture": "cross-provider Cursor/OpenCode Go",
+      "cost_posture": "use Cursor subscription for core work and Go for CP/context/cheap lanes",
+      "recommended_for": "Cursor users who also have OpenCode Go and want cheaper/faster side lanes",
+      "verified_locally": false,
+      "notes": [
+        "Requires the local Cursor-compatible endpoint to be running."
+      ],
+      "cross_provider_fallback": true,
+      "verification_status": "template-needs-smoke-test"
     }
-  ]
+  ],
+  "schema_version": 1
 }

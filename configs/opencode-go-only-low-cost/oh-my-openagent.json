@@ -1,0 +1,233 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "hephaestus": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "oracle": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "librarian": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "explore": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "opencode-go/mimo-v2.5",
+      "fallback_models": [
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "prometheus": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "metis": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "momus": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "atlas": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "opencode-go/qwen3.6-plus",
+      "fallback_models": [
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "document-writer": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "opencode-go/qwen3.6-plus",
+      "fallback_models": [
+        "opencode-go/minimax-m2.7",
+        "opencode-go/mimo-v2.5"
+      ]
+    },
+    "go-long-horizon": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "go-agentic-search": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "go-multimodal": {
+      "model": "opencode-go/mimo-v2.5",
+      "fallback_models": [
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    },
+    "go-large-context": {
+      "model": "opencode-go/qwen3.6-plus",
+      "fallback_models": [
+        "opencode-go/mimo-v2.5-pro",
+        "opencode-go/minimax-m2.7"
+      ]
+    },
+    "go-cheap-sweep": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "ultrabrain": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "deep": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "artistry": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "quick": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "unspecified-low": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "unspecified-high": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "writing": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/minimax-m2.5",
+        "opencode-go/kimi-k2.5"
+      ]
+    },
+    "cursor-opus": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "openai-codex": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "opencode-go/qwen3.5-plus",
+        "opencode-go/glm-5.1",
+        "opencode-go/kimi-k2.6"
+      ]
+    },
+    "ui-prototype": {
+      "model": "opencode-go/qwen3.6-plus",
+      "fallback_models": [
+        "opencode-go/minimax-m2.7",
+        "opencode-go/qwen3.5-plus"
+      ]
+    }
+  }
+}

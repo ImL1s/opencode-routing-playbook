@@ -1,0 +1,210 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "hephaestus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "oracle": {
+      "model": "cursor-acp/opus-4.6-thinking",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/auto"
+      ]
+    },
+    "librarian": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast"
+      ]
+    },
+    "explore": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/sonnet-4.5-thinking",
+        "cursor-acp/gpt-5.3-codex-high"
+      ]
+    },
+    "prometheus": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "metis": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "momus": {
+      "model": "cursor-acp/gpt-5.3-codex-xhigh",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/opus-4.6-thinking"
+      ]
+    },
+    "atlas": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast"
+      ]
+    },
+    "document-writer": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor-acp/gpt-5.3-codex-high"
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast"
+      ]
+    },
+    "go-long-horizon": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "go-agentic-search": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "go-multimodal": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/sonnet-4.5-thinking",
+        "cursor-acp/gpt-5.3-codex-high"
+      ]
+    },
+    "go-large-context": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "go-cheap-sweep": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    },
+    "ultrabrain": {
+      "model": "cursor-acp/gpt-5.3-codex-xhigh",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/opus-4.6-thinking"
+      ]
+    },
+    "deep": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "artistry": {
+      "model": "cursor-acp/auto",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/gpt-5.3-codex-low-fast"
+      ]
+    },
+    "quick": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    },
+    "unspecified-low": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    },
+    "unspecified-high": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "writing": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor-acp/gpt-5.3-codex-high"
+      ]
+    },
+    "cursor-opus": {
+      "model": "cursor-acp/opus-4.6-thinking",
+      "fallback_models": [
+        "cursor-acp/gpt-5.3-codex-high",
+        "cursor-acp/auto"
+      ]
+    },
+    "openai-codex": {
+      "model": "cursor-acp/gpt-5.3-codex-high",
+      "fallback_models": [
+        "cursor-acp/opus-4.6-thinking",
+        "cursor-acp/auto"
+      ]
+    },
+    "ui-prototype": {
+      "model": "cursor-acp/gpt-5.3-codex-low-fast",
+      "fallback_models": [
+        "cursor-acp/auto",
+        "cursor/auto"
+      ]
+    }
+  }
+}
