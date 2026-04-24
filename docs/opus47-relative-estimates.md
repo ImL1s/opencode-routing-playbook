@@ -12,7 +12,7 @@ This page gives rough, decision-oriented percentage ranges for every shipped pro
 | --- | --- | --- |
 | Opus 4.7 Max 5x | Claude Max 5x subscription, $100/month, including Claude Code access. | Practical premium subscription baseline for frequent single-provider Claude users. |
 | Opus 4.7 Max 20x | Claude Max 20x subscription, $200/month, including Claude Code access. | Heavy-use subscription baseline where capacity matters more than entry price. |
-| Opus 4.7 API, cache-adjusted | Anthropic API pricing using Opus 4.7 input/output/cache-read rates. | Token-equivalent cost baseline for replacing broad Go-style workloads with Opus API calls. |
+| Opus 4.7 API, cache-adjusted | Anthropic API pricing using Opus 4.7 input/output/cache-read rates, verified 2026-04-24. | Token-equivalent cost baseline for replacing broad Go-style workloads with Opus API calls. |
 
 ## How to read the percentages
 
@@ -67,6 +67,25 @@ These are value ranges, not literal dollar savings. They combine expected capabi
 
 OpenCode Go publishes request estimates and average token-shape assumptions for each Go model. OpenCode Go is $5 for the first month and $10/month afterward; the percentage column below uses the steady-state $10/month price. If those same broad request patterns were replaced by Opus 4.7 API calls, the rough Opus API cost can be much higher than Go's subscription price.
 
+The cache-adjusted column uses Opus 4.7 input at $5/MTok, cache reads at $0.50/MTok, and output at $25/MTok, verified against Anthropic pricing on 2026-04-24. It intentionally does **not** include cache-write cost. That makes it a best-case recurring-cache estimate; workloads with cold prompts, short-lived caches, or poor cache reuse will land closer to the no-cache column.
+
+Token-shape assumptions used below, copied from the reviewed OpenCode Go model-estimate table on 2026-04-24:
+
+| Go model pattern | Uncached input tokens/request | Cached tokens/request | Output tokens/request | Note |
+| --- | ---: | ---: | ---: | --- |
+| GLM-5.1 | 700 | 52,000 | 150 | Published Go estimate. |
+| GLM-5 | 700 | 52,000 | 150 | Uses the same family token shape as GLM-5.1 for this rough estimate. |
+| Kimi K2.6 | 870 | 55,000 | 200 | Published Go estimate. |
+| Kimi K2.5 | 870 | 55,000 | 200 | Uses the same family token shape as Kimi K2.6 for this rough estimate. |
+| MiMo-V2-Pro | 350 | 41,000 | 250 | Uses the same large-context token shape as MiMo-V2.5-Pro for this rough estimate. |
+| MiMo-V2.5-Pro | 350 | 41,000 | 250 | Published Go estimate. |
+| MiMo-V2-Omni | 1,000 | 60,000 | 140 | Published Go estimate. |
+| MiMo-V2.5 | 1,000 | 60,000 | 140 | Uses the same multimodal token shape as MiMo-V2-Omni for this rough estimate. |
+| Qwen3.6 Plus | 500 | 57,000 | 190 | Published Go estimate. |
+| MiniMax M2.7 | 300 | 55,000 | 125 | Published Go estimate. |
+| MiniMax M2.5 | 300 | 55,000 | 125 | Uses the same family token shape as MiniMax M2.7 for this rough estimate. |
+| Qwen3.5 Plus | 410 | 47,000 | 140 | Published Go estimate. |
+
 | Go model pattern | Go-estimated requests/month | Opus API equivalent with cache reads | Opus API equivalent without cache | Go monthly price as % of cache-adjusted Opus API equivalent |
 | --- | ---: | ---: | ---: | ---: |
 | GLM-5.1 | 4,300 | ~$143 | ~$1,149 | ~7.0% |
@@ -107,7 +126,7 @@ The no-cache column replaces cached-token pricing with standard input pricing. T
 
 ## Sources and caveats
 
-Official/current sources used for this estimate:
+Official/current sources used for this estimate, verified on 2026-04-24:
 
 - OpenCode Go documentation: pricing, beta status, model list, monthly request estimates, and token-shape assumptions: <https://opencode.ai/docs/go/>
 - Anthropic API pricing: Opus 4.7 input/output/cache prices and tokenizer caveat: <https://platform.claude.com/docs/en/about-claude/pricing>
@@ -120,4 +139,5 @@ Caveats:
 - These ranges are heuristic estimates for profile selection, not reproducible benchmark results.
 - Local routing, rate limits, region, prompt shape, cache hit rate, and provider outages can move real outcomes materially.
 - Opus 4.7 remains the premium single-model quality baseline here; profiles exceed 100% only on speed, resilience, context specialization, or CP/value dimensions.
-- Re-run `opencode models <provider>` and smoke tests before treating any template profile as current on another machine.
+- Model IDs and availability can drift. Treat model names here as routing examples tied to this repo's profiles; re-run `opencode models <provider>` and smoke tests before treating any template profile as current on another machine.
+- The Opus API table omits prompt-cache write charges and assumes high cache reuse. Use the no-cache column when cache behavior is unknown.
