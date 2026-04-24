@@ -1,0 +1,12 @@
+# Never commit real local secrets or live configs
+.env
+.env.*
+!.env.example
+*.local.json
+*.secret.json
+*.bak
+*.backup
+.DS_Store
+
+# Generated validation output
+.validation/

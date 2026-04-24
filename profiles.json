@@ -1,0 +1,25 @@
+{
+  "profiles": [
+    {
+      "name": "daily-gpt55-go-provider-diverse",
+      "main_model": "openai/gpt-5.5",
+      "small_model": "openai/gpt-5.4-mini",
+      "cross_provider_fallback": true,
+      "recommended_for": "daily local workflow with OpenAI OAuth and OpenCode Go"
+    },
+    {
+      "name": "provider-diverse-safe-gpt54-go",
+      "main_model": "openai/gpt-5.4",
+      "small_model": "openai/gpt-5.4-mini",
+      "cross_provider_fallback": true,
+      "recommended_for": "portable no-GPT-5.5 workflow with OpenCode Go outage fallback"
+    },
+    {
+      "name": "openai-only-sensitive",
+      "main_model": "openai/gpt-5.4",
+      "small_model": "openai/gpt-5.4-mini",
+      "cross_provider_fallback": false,
+      "recommended_for": "sensitive repositories and compliance-bound work"
+    }
+  ]
+}

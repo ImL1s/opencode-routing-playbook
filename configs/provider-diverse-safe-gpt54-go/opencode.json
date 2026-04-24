@@ -1,0 +1,444 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "GEMINI.md"
+  ],
+  "mcp": {
+    "brightData": {
+      "command": [
+        "npx",
+        "-y",
+        "@brightdata/mcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "API_TOKEN": "${BRIGHTDATA_API_TOKEN}",
+        "PRO_MODE": "true"
+      },
+      "type": "local"
+    },
+    "chrome-devtools": {
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "type": "local"
+    },
+    "firebase": {
+      "command": [
+        "npx",
+        "-y",
+        "firebase-tools@latest",
+        "mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "mobile-mcp": {
+      "command": [
+        "npx",
+        "@mobilenext/mobile-mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "playwright": {
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
+  "model": "openai/gpt-5.4",
+  "permission": {
+    "*": "allow",
+    "bash": "allow",
+    "edit": "allow"
+  },
+  "plugin": [
+    "opencode-antigravity-auth@latest",
+    "oh-my-openagent@latest"
+  ],
+  "provider": {
+    "cursor": {
+      "models": {
+        "auto": {
+          "name": "Auto"
+        },
+        "gpt-5.2": {
+          "name": "GPT-5.2"
+        },
+        "opus-4.6": {
+          "name": "Claude 4.6 Opus"
+        },
+        "opus-4.6-thinking": {
+          "name": "Claude 4.6 Opus (Thinking)"
+        }
+      },
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "${PROVIDER_API_KEY}",
+        "baseURL": "http://127.0.0.1:8765/v1"
+      }
+    },
+    "cursor-acp": {
+      "models": {
+        "auto": {
+          "name": "Auto"
+        },
+        "composer-1": {
+          "name": "Composer 1"
+        },
+        "composer-1.5": {
+          "name": "Composer 1.5"
+        },
+        "gemini-3-flash": {
+          "name": "Gemini 3 Flash"
+        },
+        "gemini-3-pro": {
+          "name": "Gemini 3 Pro"
+        },
+        "gpt-5.1-codex-max": {
+          "name": "GPT-5.1 Codex Max"
+        },
+        "gpt-5.1-codex-max-high": {
+          "name": "GPT-5.1 Codex Max High"
+        },
+        "gpt-5.1-high": {
+          "name": "GPT-5.1 High"
+        },
+        "gpt-5.2": {
+          "name": "GPT-5.2"
+        },
+        "gpt-5.2-codex": {
+          "name": "GPT-5.2 Codex"
+        },
+        "gpt-5.2-codex-fast": {
+          "name": "GPT-5.2 Codex Fast"
+        },
+        "gpt-5.2-codex-high": {
+          "name": "GPT-5.2 Codex High"
+        },
+        "gpt-5.2-codex-high-fast": {
+          "name": "GPT-5.2 Codex High Fast"
+        },
+        "gpt-5.2-codex-low": {
+          "name": "GPT-5.2 Codex Low"
+        },
+        "gpt-5.2-codex-low-fast": {
+          "name": "GPT-5.2 Codex Low Fast"
+        },
+        "gpt-5.2-codex-xhigh": {
+          "name": "GPT-5.2 Codex Extra High"
+        },
+        "gpt-5.2-codex-xhigh-fast": {
+          "name": "GPT-5.2 Codex Extra High Fast"
+        },
+        "gpt-5.2-high": {
+          "name": "GPT-5.2 High"
+        },
+        "gpt-5.3-codex": {
+          "name": "GPT-5.3 Codex"
+        },
+        "gpt-5.3-codex-fast": {
+          "name": "GPT-5.3 Codex Fast"
+        },
+        "gpt-5.3-codex-high": {
+          "name": "GPT-5.3 Codex High"
+        },
+        "gpt-5.3-codex-high-fast": {
+          "name": "GPT-5.3 Codex High Fast"
+        },
+        "gpt-5.3-codex-low": {
+          "name": "GPT-5.3 Codex Low"
+        },
+        "gpt-5.3-codex-low-fast": {
+          "name": "GPT-5.3 Codex Low Fast"
+        },
+        "gpt-5.3-codex-xhigh": {
+          "name": "GPT-5.3 Codex Extra High"
+        },
+        "gpt-5.3-codex-xhigh-fast": {
+          "name": "GPT-5.3 Codex Extra High Fast"
+        },
+        "grok": {
+          "name": "Grok"
+        },
+        "opus-4.5": {
+          "name": "Claude 4.5 Opus"
+        },
+        "opus-4.5-thinking": {
+          "name": "Claude 4.5 Opus (Thinking)"
+        },
+        "opus-4.6": {
+          "name": "Claude 4.6 Opus"
+        },
+        "opus-4.6-thinking": {
+          "name": "Claude 4.6 Opus (Thinking)"
+        },
+        "sonnet-4.5": {
+          "name": "Claude 4.5 Sonnet"
+        },
+        "sonnet-4.5-thinking": {
+          "name": "Claude 4.5 Sonnet (Thinking)"
+        }
+      },
+      "name": "Cursor Agent (ACP stdin)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:32124/v1"
+      }
+    },
+    "google": {
+      "models": {
+        "antigravity-claude-opus-4-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Opus 4.5 Thinking (Antigravity)",
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "antigravity-claude-opus-4-6-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Opus 4.6 Thinking (Antigravity)",
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "antigravity-claude-sonnet-4-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Sonnet 4.5 (Antigravity)"
+        },
+        "antigravity-claude-sonnet-4-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Sonnet 4.5 Thinking (Antigravity)",
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "antigravity-gemini-3-flash": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Flash (Antigravity)",
+          "variants": {
+            "high": {
+              "thinkingLevel": "high"
+            },
+            "low": {
+              "thinkingLevel": "low"
+            },
+            "medium": {
+              "thinkingLevel": "medium"
+            },
+            "minimal": {
+              "thinkingLevel": "minimal"
+            }
+          }
+        },
+        "antigravity-gemini-3-pro": {
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Pro (Antigravity)",
+          "variants": {
+            "high": {
+              "thinkingLevel": "high"
+            },
+            "low": {
+              "thinkingLevel": "low"
+            }
+          }
+        },
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 2.5 Flash (Gemini CLI)"
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 2.5 Pro (Gemini CLI)"
+        },
+        "gemini-3-flash-preview": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Flash Preview (Gemini CLI)"
+        },
+        "gemini-3-pro-preview": {
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Pro Preview (Gemini CLI)"
+        }
+      }
+    },
+    "ollama": {
+      "models": {
+        "gag0/qwen35-opus-distil": {
+          "_launch": true,
+          "name": "gag0/qwen35-opus-distil"
+        }
+      },
+      "name": "Ollama",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      }
+    }
+  },
+  "small_model": "openai/gpt-5.4-mini"
+}
