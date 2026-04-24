@@ -2,6 +2,8 @@
 
 This matrix is organized by what the user has, not by model hype. All configs are sanitized templates; smoke-test on the target machine.
 
+For rough percentage ranges against pure Claude Opus 4.7, use [`opus47-relative-estimates.md`](opus47-relative-estimates.md). That comparison is docs-only and does not change the installable routing profiles.
+
 | Subscription/API combo | Recommended profile | Status | Main / small | Cost posture | Cross-provider? | Use when |
 | --- | --- | --- | --- | --- | --- | --- |
 | OpenAI OAuth / GPT subscription + OpenCode Go subscription | `daily-gpt55-go-provider-diverse` | verified | `openai/gpt-5.5` / `openai/gpt-5.4-mini` | uses GPT for high-reliability work and Go for specialist/CP lanes | yes | daily local workflow when GPT-5.5 is actually executable and OpenCode Go is available |

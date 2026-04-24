@@ -4,6 +4,8 @@ Reusable, sanitized OpenCode + oh-my-openagent routing profiles for different su
 
 This repo is intentionally **profile-first**: do not treat one config as universal. Pick a profile based on what the user actually has: GPT/OpenAI OAuth, OpenAI API key, OpenCode Go, Gemini/Google, Cursor local router, or a provider-diverse mix.
 
+Need a rough comparison against a pure Claude Opus 4.7 setup? See [`docs/opus47-relative-estimates.md`](docs/opus47-relative-estimates.md) for profile-by-profile quality, speed, resilience, and CP/value ranges.
+
 No real API keys or tokens belong in this repo.
 
 ## Quick choose
@@ -56,6 +58,7 @@ configs/<profile>/
 docs/
   profile-selection.md      # decision tree by subscription/API situation
   subscription-matrix.md    # full combination matrix
+  opus47-relative-estimates.md # rough profile percentages versus pure Claude Opus 4.7
   profile-architecture.md   # naming, profile tiers, and contribution rules
   model-rationale.md        # why each model family appears
   security.md               # secret and provider-boundary guidance

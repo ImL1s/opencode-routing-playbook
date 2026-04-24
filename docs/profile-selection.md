@@ -1,6 +1,6 @@
 # Profile Selection
 
-Use this file when deciding by subscription, API key, or provider boundary.
+Use this file when deciding by subscription, API key, or provider boundary. For Opus 4.7-relative quality/speed/resilience/CP ranges, see [`opus47-relative-estimates.md`](opus47-relative-estimates.md).
 
 | Access / subscription | Profile | Status | Providers used | Routing posture | Privacy posture |
 | --- | --- | --- | --- | --- | --- |
