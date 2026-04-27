@@ -9,7 +9,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "xhigh"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "hephaestus": {
@@ -18,7 +19,8 @@
       "fallback_models": [
         "opencode-go/kimi-k2.6",
         "opencode-go/glm-5.1",
-        "opencode-go/mimo-v2.5-pro"
+        "opencode-go/mimo-v2.5-pro",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "oracle": {
@@ -26,7 +28,8 @@
       "variant": "high",
       "fallback_models": [
         "opencode-go/kimi-k2.6",
-        "opencode-go/glm-5.1"
+        "opencode-go/glm-5.1",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "librarian": {
@@ -36,14 +39,16 @@
         "opencode-go/mimo-v2.5-pro",
         "opencode-go/qwen3.6-plus",
         "opencode-go/qwen3.5-plus",
-        "openai/gpt-5.4-mini"
+        "openai/gpt-5.4-mini",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "explore": {
       "model": "openai/gpt-5.4-mini",
       "fallback_models": [
         "opencode-go/minimax-m2.7",
-        "opencode-go/qwen3.5-plus"
+        "opencode-go/qwen3.5-plus",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "multimodal-looker": {
@@ -54,7 +59,8 @@
           "model": "openai/gpt-5.5",
           "variant": "medium"
         },
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.6",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "prometheus": {
@@ -62,7 +68,8 @@
       "variant": "high",
       "fallback_models": [
         "opencode-go/glm-5.1",
-        "opencode-go/mimo-v2.5-pro"
+        "opencode-go/mimo-v2.5-pro",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "metis": {
@@ -70,7 +77,8 @@
       "variant": "high",
       "fallback_models": [
         "opencode-go/glm-5.1",
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.6",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "momus": {
@@ -79,7 +87,8 @@
       "fallback_models": [
         "opencode-go/glm-5.1",
         "opencode-go/mimo-v2.5-pro",
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.6",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "atlas": {
@@ -89,7 +98,8 @@
         "openai/gpt-5.4-mini",
         "opencode-go/kimi-k2.6",
         "opencode-go/qwen3.6-plus",
-        "opencode-go/minimax-m2.7"
+        "opencode-go/minimax-m2.7",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "sisyphus-junior": {
@@ -100,7 +110,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "medium"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "frontend-ui-ux-engineer": {
@@ -109,7 +120,8 @@
       "fallback_models": [
         "opencode-go/qwen3.6-plus",
         "opencode-go/glm-5.1",
-        "opencode-go/mimo-v2.5"
+        "opencode-go/mimo-v2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "document-writer": {
@@ -119,7 +131,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "medium"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     }
   },
@@ -130,7 +143,8 @@
       "fallback_models": [
         "opencode-go/qwen3.6-plus",
         "opencode-go/glm-5.1",
-        "opencode-go/mimo-v2.5"
+        "opencode-go/mimo-v2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "go-long-horizon": {
@@ -141,7 +155,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "xhigh"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "go-agentic-search": {
@@ -151,7 +166,8 @@
           "model": "openai/gpt-5.5",
           "variant": "high"
         },
-        "opencode-go/kimi-k2.5"
+        "opencode-go/kimi-k2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "go-multimodal": {
@@ -161,7 +177,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "medium"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "go-large-context": {
@@ -172,14 +189,16 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "medium"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "go-cheap-sweep": {
       "model": "opencode-go/minimax-m2.7",
       "fallback_models": [
         "opencode-go/minimax-m2.5",
-        "openai/gpt-5.4-mini"
+        "openai/gpt-5.4-mini",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "ultrabrain": {
@@ -187,7 +206,8 @@
       "variant": "xhigh",
       "fallback_models": [
         "opencode-go/glm-5.1",
-        "opencode-go/mimo-v2.5-pro"
+        "opencode-go/mimo-v2.5-pro",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "deep": {
@@ -195,7 +215,8 @@
       "variant": "high",
       "fallback_models": [
         "opencode-go/kimi-k2.6",
-        "opencode-go/glm-5.1"
+        "opencode-go/glm-5.1",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "artistry": {
@@ -203,21 +224,24 @@
       "variant": "medium",
       "fallback_models": [
         "opencode-go/kimi-k2.5",
-        "opencode-go/mimo-v2.5"
+        "opencode-go/mimo-v2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "quick": {
       "model": "openai/gpt-5.4-mini",
       "fallback_models": [
         "opencode-go/minimax-m2.7",
-        "opencode-go/minimax-m2.5"
+        "opencode-go/minimax-m2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "unspecified-low": {
       "model": "openai/gpt-5.4-mini",
       "fallback_models": [
         "opencode-go/minimax-m2.7",
-        "opencode-go/qwen3.5-plus"
+        "opencode-go/qwen3.5-plus",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "unspecified-high": {
@@ -226,7 +250,8 @@
       "fallback_models": [
         "opencode-go/glm-5.1",
         "opencode-go/kimi-k2.6",
-        "opencode-go/mimo-v2.5-pro"
+        "opencode-go/mimo-v2.5-pro",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "writing": {
@@ -236,7 +261,8 @@
         {
           "model": "openai/gpt-5.5",
           "variant": "medium"
-        }
+        },
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "cursor-opus": {
@@ -244,7 +270,8 @@
       "variant": "high",
       "fallback_models": [
         "opencode-go/glm-5.1",
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.6",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "openai-codex": {
@@ -257,7 +284,8 @@
         },
         "openai/gpt-5.4-mini",
         "opencode-go/glm-5.1",
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.6",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     },
     "ui-prototype": {
@@ -268,7 +296,8 @@
           "model": "openai/gpt-5.5",
           "variant": "medium"
         },
-        "opencode-go/mimo-v2.5"
+        "opencode-go/mimo-v2.5",
+        "openai-codex/gpt-5.3-codex-spark"
       ]
     }
   },
