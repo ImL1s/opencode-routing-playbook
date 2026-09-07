@@ -120,3 +120,9 @@ opencode run -m opencode-go/minimax-m2.7 --title routing-smoke --dangerously-ski
 - Cross-provider profiles can send prompt/code to multiple providers. Use `openai-only-sensitive`, `google-gemini-only`, or `cursor-local-router-only` when a single approved provider boundary matters.
 - GPT-5.5 is kept in OAuth/subscription-oriented profiles because it was locally executable in the originating setup. Do not assume GPT-5.5 API-key availability in portable API profiles.
 - Model lists, availability, pricing, and context windows drift. Re-run `opencode models <provider>` and smoke tests before presenting a profile as current for another machine.
+
+---
+
+## Support
+
+If this project saved you some time, you can [buy me a coffee](https://buymeacoffee.com/iml1s).
